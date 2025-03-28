@@ -13,13 +13,13 @@ public class Main {
         String pathWindows = "C:\\myTest\\testFile.txt";
         String pathWindowsInApp = "myTestFolder\\newFolder\\testFile.txt";
         String separator = File.separator; //возвращает слеш соответсвующий OS
-        String pathWindowsInCrossApp =
+        String pathCrossApp =
                 "myTestFolder" + separator + "newFolder" +
                         separator + "testFile2.txt";
 
 
         /*Запись - пересоздает файл*/
-        File fileWrite = new File(pathWindowsInCrossApp);
+        File fileWrite = new File(pathCrossApp);
         PrintWriter pw = new PrintWriter(fileWrite);
         pw.println("Строка номер 1");
         pw.println("Строка номер 2");
@@ -27,7 +27,7 @@ public class Main {
         pw.close();
 
         /*Чтение*/
-        File fileRead = new File(pathWindowsInCrossApp);
+        File fileRead = new File(pathCrossApp);
         Scanner scanner = new Scanner(fileRead);
         while (scanner.hasNextLine()){
             System.out.println(scanner.nextLine());
