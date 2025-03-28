@@ -5,7 +5,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Main {
+    private transient int noSerializable;
     public static void main(String[] args) {
+        /*Класс Person должен реализовать
+        интерфейс Serializable*/
+        /*Ключевое слов transient запретит сериализацию поля*/
+
         /*Сериализация, */
         WriteObject();
         /*Десериализация*/
@@ -26,8 +31,6 @@ public class Main {
         Person person1 = new Person(1, "Bob");
         Person person2 = new Person(2, "Tom");
         Person person3 = new Person(3, "Mike");
-        /*Класс Person должен реализовать
-        интерфейс Serializable*/
         try {
             FileOutputStream fos = new FileOutputStream("people.bin");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -98,11 +101,8 @@ public class Main {
         Person[] peoples = {new Person(101,"Alisa"),
                 new Person(102,"Lisa"),
                 new Person(103,"Natasha" )};
-        try {
-            FileOutputStream fos = new FileOutputStream("people3.bin");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+        try ( ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("people3.bin"));) {
             oos.writeObject(peoples);
-            oos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -110,14 +110,10 @@ public class Main {
 
 
     private static void ReadObjectArrayObj(){
-        try {
-            FileInputStream fis = new FileInputStream("people3.bin");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("people3.bin"))){
             Person[] persons =  (Person[]) ois.readObject();
             System.out.println((Arrays.toString(persons)));
 
-            ois.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
