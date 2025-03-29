@@ -18,7 +18,7 @@ public class SortBubble {
         System.out.println(Arrays.toString(array));
 
         long start = System.nanoTime();
-        int[] arraySort = sortBubble(array);
+        int[] arraySort = sortBubbleMod(array);
         long end = System.nanoTime();
         long timeInMillis = TimeUnit.MILLISECONDS.convert(end - start, TimeUnit.NANOSECONDS);
         System.out.println(Arrays.toString(arraySort));
