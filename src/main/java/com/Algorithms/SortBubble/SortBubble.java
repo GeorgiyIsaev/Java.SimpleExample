@@ -23,10 +23,8 @@ public class SortBubble {
         long timeInMillis = TimeUnit.MILLISECONDS.convert(end - start, TimeUnit.NANOSECONDS);
         System.out.println(Arrays.toString(arraySort));
         System.out.println("Затрачено времени: " +  timeInMillis);
-
-
-
     }
+
     public static int[] createRandomArray(int size){
         int [] array = new int[size];
         Random rand = new Random();
