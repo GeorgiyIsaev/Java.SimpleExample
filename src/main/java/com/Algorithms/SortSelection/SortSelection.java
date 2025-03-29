@@ -28,7 +28,7 @@ public class SortSelection {
         return array;
     }
 
-    public static int[] sortArray(int[] array){
+    public static int[] sortArray(int[] array) {
 
         for (int left = 0; left < array.length; left++) {
             int minInd = left;
@@ -38,14 +38,11 @@ public class SortSelection {
                 }
 
             }
-            if(minInd!=i){
-                int temp = array[left];
-                array[left] = array[minInd];
-                array[minInd] = temp;
-            }
+
+            int temp = array[left];
+            array[left] = array[minInd];
+            array[minInd] = temp;
         }
-
-
 
         return array;
     }
