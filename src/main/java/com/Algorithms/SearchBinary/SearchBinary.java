@@ -19,7 +19,7 @@ public class SearchBinary {
         System.out.println("Массив: " + Arrays.toString(array));
         System.out.println("Индекс для числа " +  findNumber + ": " + index);
     }
-    public static int binarySearch(int arr[], int elementToSearch) {
+    public static int binarySearch(int[] arr, int elementToSearch) {
 
         int firstIndex = 0;
         int lastIndex = arr.length - 1;

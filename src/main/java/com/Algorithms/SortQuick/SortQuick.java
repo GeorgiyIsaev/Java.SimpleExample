@@ -21,7 +21,7 @@ public class SortQuick {
     public static void main(String[] args) {
         int[] array = createRandomArray(20);
         System.out.println(Arrays.toString( array));
-        array = sortArray(array, 0,array.length-1);
+        sortArray(array, 0, array.length - 1);
         System.out.println(Arrays.toString( array));
 
     }

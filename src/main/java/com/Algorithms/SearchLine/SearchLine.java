@@ -16,7 +16,7 @@ public class SearchLine {
         System.out.println("Индекс для числа " +  findNumber + ": " + index);
     }
 
-    public static int linearSearch(int array[], int elementToSearch) {
+    public static int linearSearch(int[] array, int elementToSearch) {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == elementToSearch)
                 return index;
