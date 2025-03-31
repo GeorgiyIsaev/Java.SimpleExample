@@ -2,6 +2,14 @@ package com.Algorithms.SearchBinary;
 
 import java.util.Arrays;
 
+/*Двоичный поиск: Binary Search
+Требуется отсортированный массив
+Алгоритм делит массив на две половины.
+Сравнивает искомое число с элементом в середине.
+Если число не найдено, поиск начинается заново через рекурсию,
+в той половине, которая соответствует условию больше или меньше.
+*/
+
 public class SearchBinary {
     public static void main(String[] args) {
         int[] array = new int[] {11,22,33,45,56,68,79,89,100};
