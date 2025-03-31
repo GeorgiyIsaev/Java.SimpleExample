@@ -9,9 +9,8 @@ import java.util.Arrays;
 
 public class SearchLine {
     public static void main(String[] args) {
-
-        int[] array = new int[] {4,7,2,8,4,9,5,1,3};
-        int findNumber = 5;
+        int[] array = new int[] {11,22,33,45,56,68,79,89,100};
+        int findNumber = 68;
         int index = linearSearch(array,findNumber);
         System.out.println("Массив: " + Arrays.toString(array));
         System.out.println("Индекс для числа " +  findNumber + ": " + index);
