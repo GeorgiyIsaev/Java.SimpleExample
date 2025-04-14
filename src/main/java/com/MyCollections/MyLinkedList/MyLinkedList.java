@@ -41,6 +41,28 @@ public class MyLinkedList {
         return string.toString();
     }
 
+    private Node getNode (int index){
+        int currentIndex = 0;
+        Node temp = head;
+        while(temp != null){
+            if (currentIndex == index){
+                return temp;
+            }
+            temp=temp.getNext();
+            currentIndex++;
+        }
+        return null;
+    }
+    public int get(int index){
+       Node currentNode = getNode(index);
+       if(currentNode != null) {
+           return currentNode.getValue();
+       }
+       throw new IllegalArgumentException();
+    }
+
+
+
     private static class Node{
         private int value;
         private Node next;
