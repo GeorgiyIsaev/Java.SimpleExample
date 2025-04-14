@@ -10,6 +10,10 @@ public class MyLinkedList {
     private Node head;
     private int size;
 
+    public int getSize() {
+        return size;
+    }
+
     public void add (int value){
         if (this.head == null){
             this.head = new Node(value);
@@ -26,10 +30,10 @@ public class MyLinkedList {
     }
     public void addIndex(int index, int value){
         if(index==0){
-
             Node tempNode = head;
             head = new Node(value);
             head.setNext(tempNode);
+            size++;
             return;
         }
         index--;
@@ -38,6 +42,7 @@ public class MyLinkedList {
            Node tempNode = currentNode.getNext();
             currentNode.setNext(new Node(value));
             currentNode.getNext().setNext(tempNode);
+            size++;
             return;
         }
         throw new IllegalArgumentException();

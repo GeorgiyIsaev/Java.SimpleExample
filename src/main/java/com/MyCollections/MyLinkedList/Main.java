@@ -14,6 +14,7 @@ public class Main {
         System.out.println("Remove Index 4: " + myLinkedList.get(4));
         myLinkedList.remove(4);
         System.out.println(myLinkedList);
+        System.out.println("Size: " + myLinkedList.getSize());
 
         System.out.println("Remove Index 0: " + myLinkedList.get(0));
         myLinkedList.remove(0);
@@ -21,6 +22,7 @@ public class Main {
         System.out.println("Remove Index 1: " + myLinkedList.get(1));
         myLinkedList.remove(1);
         System.out.println(myLinkedList);
+        System.out.println("Size: " + myLinkedList.getSize());
 
         System.out.println("Add Index 1: " + myLinkedList.get(1));
         myLinkedList.addIndex(1, 99);
@@ -31,6 +33,6 @@ public class Main {
         System.out.println("Add Index 0: " + myLinkedList.get(0));
         myLinkedList.addIndex(0, 12);
         System.out.println(myLinkedList);
-
+        System.out.println("Size: " + myLinkedList.getSize());
     }
 }
