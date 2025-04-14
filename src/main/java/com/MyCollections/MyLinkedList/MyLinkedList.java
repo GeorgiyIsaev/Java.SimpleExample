@@ -24,6 +24,24 @@ public class MyLinkedList {
         }
         size++;
     }
+    public void addIndex(int index, int value){
+        if(index==0){
+
+            Node tempNode = head;
+            head = new Node(value);
+            head.setNext(tempNode);
+            return;
+        }
+        index--;
+        Node currentNode = getNode(index);
+        if(currentNode != null) {
+           Node tempNode = currentNode.getNext();
+            currentNode.setNext(new Node(value));
+            currentNode.getNext().setNext(tempNode);
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
 
     @Override
     public String toString() {
