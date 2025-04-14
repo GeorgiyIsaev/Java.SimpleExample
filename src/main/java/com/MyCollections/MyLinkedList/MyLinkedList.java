@@ -60,6 +60,20 @@ public class MyLinkedList {
        }
        throw new IllegalArgumentException();
     }
+    public void remove(int index){
+        if(index == 0){
+           this.head = this.head.getNext();
+           size--;
+           return;
+        }
+        Node currentNode = getNode(index-1);
+        if(currentNode != null) {
+            currentNode.setNext(currentNode.getNext().getNext());
+            size--;
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
 
 
 

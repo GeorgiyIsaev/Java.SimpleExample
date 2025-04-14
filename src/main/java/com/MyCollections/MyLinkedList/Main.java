@@ -9,9 +9,18 @@ public class Main {
         myLinkedList.add(4);
         myLinkedList.add(5);
         System.out.println(myLinkedList);
-
         System.out.println("Index 3: " +  myLinkedList.get(3));
 
+        System.out.println("Remove Index 4:" + myLinkedList.get(4));
+        myLinkedList.remove(4);
+        System.out.println(myLinkedList);
+
+        System.out.println("Remove Index 0:" + myLinkedList.get(0));
+        myLinkedList.remove(0);
+        System.out.println(myLinkedList);
+        System.out.println("Remove Index 1:" + myLinkedList.get(1));
+        myLinkedList.remove(1);
+        System.out.println(myLinkedList);
 
     }
 }
