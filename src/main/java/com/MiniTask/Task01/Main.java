@@ -1,5 +1,8 @@
 package com.MiniTask.Task01;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, Java <" +  System.getProperty("java.version") + ">");
@@ -25,9 +28,24 @@ public class Main {
         System.out.println("100 Градусов Цельсия это : " + toKelvin(100) + " K" );
 
         System.out.println("Grade 4 : " + grade(4));
+        System.out.println("Факториал 12 : " + getFactorial(12));
+
+        List<Rectangle> figures = new ArrayList<>();
+        figures.add(new Rectangle(2,6));
+        figures.add(new Square(6));
+        figures.add(new Rectangle(3,4));
+        figures.add(new Square(3));
+        figures.add(new Rectangle(12,7));
 
 
-//, Kelvin
+        for(Rectangle figure : figures){
+            System.out.print("figure: " + figure);
+            System.out.print(" S = " + figure.area());
+            System.out.println(" P = " + figure.perimeter());
+        }
+
+
+
     }
     public static int toFahrenheit(int celsius){
         //F = C × (9/5) + 32
@@ -56,6 +74,14 @@ public class Main {
                 return 'F';
         }
         return 'N';
+    }
+
+    public static int getFactorial(int f) {
+        int result = 1;
+        for (int i = 1; i <= f; i++) {
+            result = result * i;
+        }
+        return result;
     }
 
 
