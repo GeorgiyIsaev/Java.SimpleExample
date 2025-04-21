@@ -30,19 +30,11 @@ public class Main {
         System.out.println("Grade 4 : " + grade(4));
         System.out.println("Факториал 12 : " + getFactorial(12));
 
-        List<Rectangle> figures = new ArrayList<>();
-        figures.add(new Rectangle(2,6));
-        figures.add(new Square(6));
-        figures.add(new Rectangle(3,4));
-        figures.add(new Square(3));
-        figures.add(new Rectangle(12,7));
 
+        figures();
 
-        for(Rectangle figure : figures){
-            System.out.print("figure: " + figure);
-            System.out.print(" S = " + figure.area());
-            System.out.println(" P = " + figure.perimeter());
-        }
+        dayIsWeekends();
+
 
 
 
@@ -82,6 +74,31 @@ public class Main {
             result = result * i;
         }
         return result;
+    }
+
+    public static void figures(){
+        List<Rectangle> figures = new ArrayList<>();
+        figures.add(new Rectangle(2,6));
+        figures.add(new Square(6));
+        figures.add(new Rectangle(3,4));
+        figures.add(new Square(3));
+        figures.add(new Rectangle(12,7));
+
+        for(Rectangle figure : figures){
+            System.out.print("figure: " + figure);
+            System.out.print(" S = " + figure.area());
+            System.out.println(" P = " + figure.perimeter());
+        }
+    }
+    public static void dayIsWeekends(){
+        System.out.println("MONDAY выходной?: " + Day.MONDAY.isWeekend());
+        System.out.println("TUESDAY выходной?: " + Day.TUESDAY.isWeekend());
+        System.out.println("WEDNESDAY выходной?: " + Day.WEDNESDAY.isWeekend());
+        System.out.println("THURSDAY выходной?: " + Day.THURSDAY.isWeekend());
+        System.out.println("FRIDAY выходной?: " + Day.FRIDAY.isWeekend());
+        System.out.println("SATURDAY выходной?: " + Day.SATURDAY.isWeekend());
+        System.out.println("SUNDAY выходной?: " + Day.SUNDAY.isWeekend());
+
     }
 
 
