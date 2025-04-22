@@ -1,7 +1,6 @@
 package com.MiniTask.Task01;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,15 +34,17 @@ public class Main {
 
         dayIsWeekends();
 
+        mycCollectionsArrayList();
 
 
 
     }
     public static int toFahrenheit(int celsius){
-        //F = C × (9/5) + 32
+        //3 F = C × (9/5) + 32
         return celsius * (9/5) + 32;
     }
     public static int toKelvin(int celsius){
+        //3
         return celsius + 273;
     }
 
@@ -53,6 +54,7 @@ public class Main {
      * @return
      */
     public static char grade(int grade){
+        //4
         switch (grade){
             case 5:
                 return 'A';
@@ -69,6 +71,7 @@ public class Main {
     }
 
     public static int getFactorial(int f) {
+        //5
         int result = 1;
         for (int i = 1; i <= f; i++) {
             result = result * i;
@@ -77,6 +80,7 @@ public class Main {
     }
 
     public static void figures(){
+       //6-15
         List<Rectangle> figures = new ArrayList<>();
         figures.add(new Rectangle(2,6));
         figures.add(new Square(6));
@@ -91,6 +95,7 @@ public class Main {
         }
     }
     public static void dayIsWeekends(){
+        //16
         System.out.println("MONDAY выходной?: " + Day.MONDAY.isWeekend());
         System.out.println("TUESDAY выходной?: " + Day.TUESDAY.isWeekend());
         System.out.println("WEDNESDAY выходной?: " + Day.WEDNESDAY.isWeekend());
@@ -98,9 +103,36 @@ public class Main {
         System.out.println("FRIDAY выходной?: " + Day.FRIDAY.isWeekend());
         System.out.println("SATURDAY выходной?: " + Day.SATURDAY.isWeekend());
         System.out.println("SUNDAY выходной?: " + Day.SUNDAY.isWeekend());
-
+    }
+    public static Integer[] createRandomArray(int size) {
+        Integer[] array = new Integer[size];
+        Random rand = new Random();
+        for (int i = 0; i < size; i++) {
+            array[i] = rand.nextInt(1000);
+        }
+        return array;
     }
 
+    public static void mycCollectionsArrayList(){
+        //17-18
+        List<Integer> integerList = new ArrayList<>(Arrays.asList(createRandomArray(20)));
+        System.out.println("ArrayList no sort: " + integerList);
+        Collections.sort(integerList);
+        System.out.println("ArrayList Sort:    " + integerList);
+
+        Iterator<Integer> iter = integerList.iterator();
+        while (iter.hasNext()) {
+            Integer number = iter.next();
+            if (number % 2 == 1) {
+                iter.remove();
+            }
+        }
+        System.out.println("ArrayList delete not even: " + integerList);
+    }
+
+    public static void mycCollectionsHashMap(){
+
+    }
 
 
 }
