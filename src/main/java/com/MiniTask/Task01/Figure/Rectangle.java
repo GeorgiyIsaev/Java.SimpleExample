@@ -1,6 +1,6 @@
-package com.MiniTask.Task01;
+package com.MiniTask.Task01.Figure;
 
-public class Rectangle {
+public class Rectangle extends Figure implements IMovable{
     private static int counter;
     protected double width;
     protected double height;
@@ -42,5 +42,11 @@ public class Rectangle {
     @Override
     public String toString() {
         return "Rectangle [" +this.width +  "*" +this.height + "]";
+    }
+
+    @Override
+    public void move(int dx, int dy) {
+        this.height = this.height + dx;
+        this.width = this.width + dy;
     }
 }

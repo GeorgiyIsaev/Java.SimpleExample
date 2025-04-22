@@ -1,5 +1,12 @@
 package com.MiniTask.Task01;
 
+import com.MiniTask.Task01.Figure.Rectangle;
+import com.MiniTask.Task01.Figure.Square;
+import com.MiniTask.Task01.Util.Box;
+import com.MiniTask.Task01.Util.Constants;
+import com.MiniTask.Task01.Util.Day;
+import com.MiniTask.Task01.Util.MathUtils;
+
 import java.util.*;
 
 public class Main {
@@ -37,13 +44,15 @@ public class Main {
         mycCollectionsArrayList();
         mycCollectionsHashMap();
 
-        BoxT();
+        boxT();
 
-        MathUtilsGSD();
+        mathUtilsGSD();
 
         System.out.println("Constants: " + Constants.PI); //23
 
+        myPerson();
 
+        zero();
 
     }
     public static int toFahrenheit(int celsius){
@@ -98,8 +107,14 @@ public class Main {
         for(Rectangle figure : figures){
             System.out.print("figure: " + figure);
             System.out.print(" S = " + figure.area());
-            System.out.println(" P = " + figure.perimeter());
+            System.out.print(" P = " + figure.perimeter());
+
+            //25
+            figures.get(0).move(2,5);
+            System.out.println(" figure move (2, 5): " + figure);
         }
+
+
     }
     public static void dayIsWeekends(){
         //16
@@ -151,18 +166,41 @@ public class Main {
         //21
 
     }
-    public static void  BoxT() {
+    public static void  boxT() {
        //20
         Box<String> stringBox = new Box<>("Строка");
         System.out.println("BOX: " + stringBox);
     }
 
-    public static void  MathUtilsGSD(){
+    public static void  mathUtilsGSD(){
        //22
         int a = 12;
         int  b = 5;
         int g = MathUtils.gcd(a, b);
         System.out.println("GCD(" + a + ", " + b + ") = " + g);
     }
+
+    public static void myPerson(){
+       //24
+        Person person = new Person("Олег", new Address("Самолетная", 17));
+        System.out.println("person: " + person);
+    }
+    public static void zero(){
+        try {
+            divide(2,0);
+        }
+        catch (DivisionByZeroException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
+    public static int divide(int a,int b){
+        if(b == 0){
+            throw new DivisionByZeroException();
+        }
+        return a/b;
+    }
+
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.MiniTask.Task01;
+package com.MiniTask.Task01.Util;
 
 public class Box<T> {
     T value;

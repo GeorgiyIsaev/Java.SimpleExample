@@ -1,4 +1,4 @@
-package com.MiniTask.Task01;
+package com.MiniTask.Task01.Util;
 
 public  class MathUtils {
     public static int gcd(int a,int b){

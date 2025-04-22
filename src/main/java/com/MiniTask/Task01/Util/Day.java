@@ -1,4 +1,4 @@
-package com.MiniTask.Task01;
+package com.MiniTask.Task01.Util;
 
 public enum Day {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;

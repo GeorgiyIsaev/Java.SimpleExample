@@ -1,6 +1,6 @@
-package com.MiniTask.Task01;
+package com.MiniTask.Task01.Figure;
 
-public class Square extends Rectangle{
+public class Square extends Rectangle {
     private Square(double sideA, double sideB){
         this.height = sideA;
         this.width = sideB;
@@ -21,5 +21,11 @@ public class Square extends Rectangle{
     @Override
     public String toString() {
         return "Square [" + this.width + "]";
+    }
+    @Override
+    public void move(int dx, int dy) {
+        int average = (dx + dy) / 2;
+        this.height = this.height + average;
+        this.width = this.width + average;
     }
 }
