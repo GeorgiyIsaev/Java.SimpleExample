@@ -35,6 +35,13 @@ public class Main {
         dayIsWeekends();
 
         mycCollectionsArrayList();
+        mycCollectionsHashMap();
+
+        BoxT();
+
+        MathUtilsGSD();
+
+        System.out.println("Constants: " + Constants.PI); //23
 
 
 
@@ -131,8 +138,31 @@ public class Main {
     }
 
     public static void mycCollectionsHashMap(){
+        //19
+        Map<String,Integer> products = new HashMap<>();
+        products.put("хлеб", 2);
+        products.put("молоко", 1);
+        products.put("яблоки", 5);
+        products.put("апельсины", 4);
+        for (Map.Entry<String, Integer> entry : products.entrySet()) {
+            System.out.println("Продукт: " + entry.getKey() + " : "+ entry.getValue() + " шт.");
+        }
+
+        //21
 
     }
+    public static void  BoxT() {
+       //20
+        Box<String> stringBox = new Box<>("Строка");
+        System.out.println("BOX: " + stringBox);
+    }
 
+    public static void  MathUtilsGSD(){
+       //22
+        int a = 12;
+        int  b = 5;
+        int g = MathUtils.gcd(a, b);
+        System.out.println("GCD(" + a + ", " + b + ") = " + g);
+    }
 
 }
