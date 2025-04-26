@@ -19,6 +19,8 @@ public class Main {
         testUnmodifiableGrades();
         //4
         testNanoTime();
+        //5
+        equalsTask();
     }
 
 
@@ -84,6 +86,18 @@ public class Main {
         for(int i=0; i>10000; i++) {
             list.add(0, rnd.nextInt());
         }
+    }
+
+    public static void equalsTask(){
+       Task task1=        new Task(1,"a");
+        Task task2=      new Task(1,"b");
+       if(task2.equals(task1)){
+           System.out.println(task1 + " == " + task2);
+       }
+       else{
+           System.out.println(task1 + " != " + task2);
+       }
+
     }
 
 
