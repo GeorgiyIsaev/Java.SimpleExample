@@ -17,7 +17,8 @@ public class Main {
         console.println(figures.toString());
         //3
         testUnmodifiableGrades();
-
+        //4
+        testNanoTime();
     }
 
 
@@ -38,6 +39,53 @@ public class Main {
             System.out.println(ex);
         }
     }
+
+    public static void testNanoTime(){
+        //4
+        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> linkedList = new LinkedList<>();
+
+        System.out.println("Добавление в конец");
+        long startTime = System.nanoTime();
+        addToListRandom(arrayList);
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println("Время выполнения в наносекундах для arrayList: " + duration);
+        startTime = System.nanoTime();
+        addToListRandom(linkedList);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        System.out.println("Время выполнения в наносекундах для linkedList: " + duration);
+
+        System.out.println("Добавление в начало");
+        startTime = System.nanoTime();
+        addId0ToListRandom(arrayList);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        System.out.println("Время выполнения в наносекундах для arrayList: " + duration);
+        startTime = System.nanoTime();
+        addId0ToListRandom(linkedList);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime);
+        System.out.println("Время выполнения в наносекундах для linkedList: " + duration);
+
+
+
+
+    }// list.add(0, element)
+    public static void addToListRandom(List<Integer> list){
+        Random rnd = new Random(System.currentTimeMillis());
+        for(int i=0; i>10000; i++) {
+            list.add(rnd.nextInt());
+        }
+    }
+    public static void addId0ToListRandom(List<Integer> list){
+        Random rnd = new Random(System.currentTimeMillis());
+        for(int i=0; i>10000; i++) {
+            list.add(0, rnd.nextInt());
+        }
+    }
+
 
 }
 
