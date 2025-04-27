@@ -2,6 +2,9 @@ package com.MiniTask.Task02;
 
 import com.MiniTask.Task01.Figure.Figure;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Main {
@@ -21,6 +24,8 @@ public class Main {
         testNanoTime();
         //5
         equalsTask();
+        //6
+        workFiles();
     }
 
 
@@ -100,6 +105,15 @@ public class Main {
 
     }
 
+    public static void  workFiles(){
+        String text ="";
+        try {
+             text = FileUtils.readText(Paths.get("Data\\testFile.txt."));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println(text);
+    }
 
 }
 
