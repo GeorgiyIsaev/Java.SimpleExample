@@ -26,6 +26,8 @@ public class Main {
         equalsTask();
         //6
         workFiles();
+        //7
+        workTaskStatus();
     }
 
 
@@ -106,6 +108,7 @@ public class Main {
     }
 
     public static void  workFiles(){
+        //6
         String text ="";
         try {
              text = FileUtils.readText(Paths.get("Data\\testFile.txt."));
@@ -114,6 +117,24 @@ public class Main {
         }
         System.out.println(text);
     }
+
+    public static void workTaskStatus(){
+        System.out.println("Статус: " + TaskStatus.IN_PROGRESS);
+        System.out.println("Результат: " + canStart(TaskStatus.IN_PROGRESS));
+
+        System.out.println("Статус: " + TaskStatus.BLOCKED);
+        System.out.println("Результат: " + canStart(TaskStatus.BLOCKED));
+    }
+    public static boolean  canStart(TaskStatus taskStatus){
+        switch (taskStatus) {
+            case BLOCKED:return false;
+            case NEW:return false;
+            case DONE: return false;
+            case IN_PROGRESS: return true;
+            default: return false;
+        }
+    }
+
 
 }
 
