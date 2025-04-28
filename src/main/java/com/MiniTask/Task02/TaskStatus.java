@@ -13,13 +13,18 @@ public enum TaskStatus {
             default -> {return "NON";}
         }
     }
-    public static TaskStatus toTaskStatus(String taskStatus){
-        if(taskStatus.equalsIgnoreCase("IN_PROGRESS")){
-            return TaskStatus.IN_PROGRESS;
+    public  boolean canStart() {
+        switch (this) {
+            case BLOCKED:
+                return false;
+            case NEW:
+                return false;
+            case DONE:
+                return false;
+            case IN_PROGRESS:
+                return true;
+            default:
+                return false;
         }
-        else if(taskStatus.equalsIgnoreCase("DONE")){
-            return TaskStatus.DONE;
-        }
-        return TaskStatus.NEW;
     }
 }
