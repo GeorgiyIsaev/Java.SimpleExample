@@ -41,9 +41,13 @@ public class Main {
         // В пакете test
 
         //| 9 | Interface Segregation | Интерфейс SmartPrinter разделите на Printable (только print) и Scannable (scan). Класс SimplePrinter реализует только Printable. |
+        System.out.println("\nЗАДАЧА 09:");
         testInterfaceSegregation();
 
         //| 10 | Dependency Injection (лайт) | Класс OrderService принимает в конструкторе PaymentGateway gateway. В main создайте OrderService и передайте туда new PaypalGateway(). |
+        System.out.println("\nЗАДАЧА 10:");
+        OrderService orderService = new OrderService( new PaypalGateway());
+        System.out.println(orderService);
     }
 
     //| 1 | Интерфейсы 2.0 | Сделайте интерфейс Printer с print(String). Добавьте default void println(String s){ print(s+"\n"); }. Реализуйте в классе ConsolePrinter. |
