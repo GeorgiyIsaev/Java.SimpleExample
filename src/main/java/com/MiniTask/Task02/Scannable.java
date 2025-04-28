@@ -9,6 +9,7 @@ public class Scannable implements IScan{
     }
     @Override
     public String scan() {
+        System.out.print("Введите текст в консоль: ");
         return scanner.nextLine();
     }
 }
