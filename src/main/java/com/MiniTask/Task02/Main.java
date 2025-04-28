@@ -41,7 +41,7 @@ public class Main {
         // В пакете test
 
         //| 9 | Interface Segregation | Интерфейс SmartPrinter разделите на Printable (только print) и Scannable (scan). Класс SimplePrinter реализует только Printable. |
-
+        testInterfaceSegregation();
 
         //| 10 | Dependency Injection (лайт) | Класс OrderService принимает в конструкторе PaymentGateway gateway. В main создайте OrderService и передайте туда new PaypalGateway(). |
     }
@@ -166,6 +166,15 @@ public class Main {
 
         TaskStatus statusB = TaskStatus.BLOCKED;
         System.out.println("Можем начать?: " + statusB.canStart() + "Статус: " + statusB);
+    }
+
+    //| 9 | Interface Segregation | Интерфейс SmartPrinter разделите на Printable (только print) и Scannable (scan). Класс SimplePrinter реализует только Printable. |
+    public static void testInterfaceSegregation(){
+        Scannable scannable= new Scannable();
+        String inConsoleText = scannable.scan();
+
+        SimplePrinter simplePrinter = new SimplePrinter();
+        simplePrinter.println("Текст с консоли: " + inConsoleText);
     }
 
 
