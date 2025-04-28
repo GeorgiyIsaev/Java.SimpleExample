@@ -22,6 +22,7 @@ public class Square extends Rectangle {
     public String toString() {
         return "Square [" + this.width + "]";
     }
+
     @Override
     public void move(int dx, int dy) {
         int average = (dx + dy) / 2;
