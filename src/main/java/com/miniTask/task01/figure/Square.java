@@ -1,6 +1,6 @@
 package com.miniTask.task01.figure;
 
-public class Square extends Rectangle {
+public class Square extends Rectangle implements IMovable {
     private Square(double sideA, double sideB){
         this.height = sideA;
         this.width = sideB;
@@ -25,7 +25,7 @@ public class Square extends Rectangle {
 
     @Override
     public void move(int dx, int dy) {
-        int average = (dx + dy) / 2;
+        double average = (dx + dy) / 2.0;
         this.height = this.height + average;
         this.width = this.width + average;
     }
