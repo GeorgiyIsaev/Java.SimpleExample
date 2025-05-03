@@ -1,7 +1,6 @@
 package com.miniTask.task01.main;
 
 import com.miniTask.task01.figure.Figure;
-import com.miniTask.task01.figure.IMovable;
 import com.miniTask.task01.figure.Rectangle;
 import com.miniTask.task01.figure.Square;
 
@@ -22,15 +21,12 @@ public class Task26 {
         figures.add(new Rectangle(12,7));
         return figures;
     }
-
     public static void printFigures(){
         List<Figure> figures = createListRectangle();
         for(Figure figure : figures){
             System.out.print("figure: " + figure);
             System.out.print(" S = " + figure.area());
             System.out.println(" P = " + figure.perimeter());
-
         }
     }
-
 }

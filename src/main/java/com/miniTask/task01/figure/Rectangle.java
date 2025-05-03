@@ -2,8 +2,8 @@ package com.miniTask.task01.figure;
 
 public class Rectangle extends Figure implements IMovable{
     private static int counter;
-    protected double width;
-    protected double height;
+    private double width;
+    private double height;
     public Rectangle(){
         this.height = 1;
         this.width = 1;
@@ -11,8 +11,8 @@ public class Rectangle extends Figure implements IMovable{
     }
 
     public Rectangle(double height, double width) {
-        this.height = height;
-        this.width = width;
+        setHeight(height);
+        setWidth(width);
         counter++;
     }
 
@@ -31,14 +31,24 @@ public class Rectangle extends Figure implements IMovable{
         return this.height * this.width ;
     }
     public double perimeter(){
-        return this.height + this.width ;
+        return (this.height + this.width) * 2 ;
     }
 
     public void setWidth(double side){
-        this.width = side;
+        if(side<0.0) {
+            this.width = 0;
+        }
+        else {
+            this.width = side;
+        }
     }
     public void setHeight(double side){
-        this.height = side;
+        if(side<0.0) {
+            this.height = 0;
+        }
+        else {
+            this.height = side;
+        }
     }
 
     @Override

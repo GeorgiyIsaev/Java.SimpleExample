@@ -36,5 +36,7 @@ public class Task06_15 {
             System.out.print(" S = " + figure.area());
             System.out.println(" P = " + figure.perimeter());
         }
+        System.out.print("Count figure: " + Rectangle.getCounter());
+
     }
 }
