@@ -1,4 +1,4 @@
-package com.miniTask.task02;
+package com.miniTask.task02.dataTask;
 
 public class Task {
     private int id;

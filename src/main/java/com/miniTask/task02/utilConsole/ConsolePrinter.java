@@ -1,4 +1,4 @@
-package com.miniTask.task02;
+package com.miniTask.task02.utilConsole;
 
 public class ConsolePrinter implements IPrint{
 

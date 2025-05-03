@@ -1,12 +1,14 @@
-package com.miniTask.task02;
+package com.miniTask.task02.utilPrinter;
 
 import java.util.Scanner;
 
-public class Scannable implements IScan{
+public class SimpleScan implements IScannable {
     Scanner scanner;
-   public Scannable(){
-       scanner = new Scanner(System.in);
+
+    public SimpleScan() {
+        scanner = new Scanner(System.in);
     }
+
     @Override
     public String scan() {
         System.out.print("Введите текст в консоль: ");
