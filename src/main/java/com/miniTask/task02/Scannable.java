@@ -1,0 +1,15 @@
+package com.miniTask.task02;
+
+import java.util.Scanner;
+
+public class Scannable implements IScan{
+    Scanner scanner;
+   public Scannable(){
+       scanner = new Scanner(System.in);
+    }
+    @Override
+    public String scan() {
+        System.out.print("Введите текст в консоль: ");
+        return scanner.nextLine();
+    }
+}
