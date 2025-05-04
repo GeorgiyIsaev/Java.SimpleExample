@@ -19,7 +19,7 @@ public class MiniTask02TaskStatusTest {
         Assertions.assertFalse(taskStatus.canStart());
     }
     @Test
-    public void blocedTaskStatusForCanStartShouldHaveFalse(){
+    public void blockedTaskStatusForCanStartShouldHaveFalse(){
         TaskStatus taskStatus = TaskStatus.BLOCKED;
         Assertions.assertFalse(taskStatus.canStart());
     }
