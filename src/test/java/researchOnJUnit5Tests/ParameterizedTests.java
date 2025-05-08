@@ -125,7 +125,7 @@ public class ParameterizedTests {
     }
 
     /// --- /// --- /// --- /// --- ///
-    //8. Аннотация @CsvFileSource -cчитывает аргументы из файла
+    //8. Аннотация @CsvFileSource - считывает аргументы из файла
     // # в файле интерпретируется как комментарий.
     // numLinesToSkip =1 позволяет пропустить первую строку
     // Аргументы записываются на новой строке через запятую,
@@ -152,9 +152,6 @@ public class ParameterizedTests {
         }
         public int getAge() {
             return age;
-        }
-        public String getName() {
-            return name;
         }
         @Override
         public String toString() {
