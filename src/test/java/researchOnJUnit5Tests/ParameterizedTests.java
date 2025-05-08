@@ -5,9 +5,12 @@ package researchOnJUnit5Tests;
 import org.apache.commons.lang3.StringUtils;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -140,23 +143,59 @@ public class ParameterizedTests {
 
 
     /// --- /// --- /// --- /// --- ///
-    //9. Аннотация @ArgumentsSource
-    class EmployeesArgumentsProvider implements ArgumentsProvider {
+    //9. Аннотация @ArgumentsSource - позволяет передавать аргументы
+    // через поставщика аргументов ArgumentsProvider.
+    private static class MyClass{
+        int age;
+        String name;
+        public MyClass (int age, String name) {
+            this.age = age;
+            this.name = name;
+        }
+        public int getAge() {
+            return age;
+        }
+        public String getName() {
+            return name;
+        }
+        @Override
+        public String toString() {
+            return "["+name + " (" + age +")]";
+        }
+    }
+    public static class MyClassArgumentsProvider implements ArgumentsProvider {
         @Override
         public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
             return Stream.of(
-                    Arguments.of(new Employee(1, "Alex", LocalDate.of(1980, 2, 3))),
-                    Arguments.of(new Employee(2, "Brian", LocalDate.of(1979, 2, 3))),
-                    Arguments.of(new Employee(3, "Charles", LocalDate.of(1978, 2, 3)))
+                    Arguments.of(new MyClass(22, "Alex")),
+                    Arguments.of(new MyClass(26, "Brian")),
+                    Arguments.of(new MyClass(18, "Charles"))
             );
         }
     }
-    @ParameterizedTest(name = "{index} - {0} is older than 40")
-    @ArgumentsSource(EmployeesArgumentsProvider.class)
-    void isEmployeeAgeGreaterThan40(Employee e) {
-        Assertions.assertTrue(Period.between(e.getDob(), LocalDate.now()).get(ChronoUnit.YEARS) > 40);
+    @ParameterizedTest(name = "{index} - {0} is under 40")
+    @ArgumentsSource(MyClassArgumentsProvider.class)
+    void isEmployeeAgeGreaterThan40(MyClass myClass) {
+        Assertions.assertTrue(myClass.getAge() < 40);
     }
 
-
-
+    /// --- /// --- /// --- /// --- ///
+    //10. Аннотация @ArgumentsSource с несколькими параметрами
+   static class MyClassArgumentsManyProvider implements ArgumentsProvider {
+        @Override
+        public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+            return Stream.of(
+                    Arguments.of(new MyClass(19, "Alex"), 40, true),
+                    Arguments.of(new MyClass(42, "Alex"), 40, false),
+                    Arguments.of(new MyClass(33, "Alex"),34, true),
+                    Arguments.of(new MyClass(17, "Alex"), 19, true)
+            );
+        }
+    }
+    @ParameterizedTest(name = "{index} - {0} is under {1} should be {2}")
+    @ArgumentsSource(MyClassArgumentsManyProvider.class)
+    void testArgumentsSource(MyClass myClass, int maxAge, boolean bool){
+       boolean isUnder = myClass.getAge()<maxAge;
+       Assertions.assertEquals(isUnder, bool);
+    }
 }
