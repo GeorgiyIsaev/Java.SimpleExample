@@ -1,29 +1,19 @@
 import com.miniTask.task02.dataTask.TaskStatus;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class MiniTask02TaskStatusTest {
     //| 8 | JUnit 5 — параметризованный тест | Протестируйте canStart() из п.7
     // на всех значениях TaskStatus с @CsvSource. |
-    @Test
-    public void newTaskStatusForCanStartShouldHaveTrue(){
-        TaskStatus taskStatus = TaskStatus.NEW;
-        Assertions.assertTrue(taskStatus.canStart());
+    @ParameterizedTest
+    @CsvSource({
+            "NEW, true",
+            "IN_PROGRESS, false",
+            "DONE, false",
+            "BLOCKED, false"
+    })
+    public void taskStatusForCanStartIsBoolean(TaskStatus status, boolean isCan){
+        Assertions.assertEquals(isCan, TaskStatus.canStart(status));
     }
-    @Test
-    public void progressTaskStatusForCanStartShouldHaveFalse(){
-        TaskStatus taskStatus = TaskStatus.IN_PROGRESS;
-        Assertions.assertFalse(taskStatus.canStart());
-    }
-    @Test
-    public void doneTaskStatusForCanStartShouldHaveFalse(){
-        TaskStatus taskStatus = TaskStatus.DONE;
-        Assertions.assertFalse(taskStatus.canStart());
-    }
-    @Test
-    public void blockedTaskStatusForCanStartShouldHaveFalse(){
-        TaskStatus taskStatus = TaskStatus.BLOCKED;
-        Assertions.assertFalse(taskStatus.canStart());
-    }
-
 }
