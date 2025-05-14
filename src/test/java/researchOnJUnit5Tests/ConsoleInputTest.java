@@ -48,7 +48,7 @@ public class ConsoleInputTest {
             );
         }
     }
-    @ParameterizedTest(name = "{index} - {0} is under 40")
+    @ParameterizedTest(name = "Тест метода ввода с несколькими параметрами")
     @ArgumentsSource(MyClassArgumentsProvider.class)
     public void manyCommandTest(List<String> commands){
         if(!commands.isEmpty()){
