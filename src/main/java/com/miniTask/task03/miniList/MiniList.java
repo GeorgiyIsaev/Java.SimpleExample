@@ -35,7 +35,12 @@ public class MiniList<T> {
         T removeValue = this.head.data();
         size--;
         this.head = this.head.getNext();
-        this.head.setPrev(null);
+        if(head == null){
+            this.last = null;
+        }
+        else {
+            this.head.setPrev(null);
+        }
         return removeValue;
     }
 

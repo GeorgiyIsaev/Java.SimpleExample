@@ -14,11 +14,11 @@ public class Task01_MiniList {
         miniList.addLast(125);
         System.out.println("miniList for added: " + miniList);
 
-        while (miniList.getSize() > 1) {
+        while (miniList.getSize() > 0) {
             Integer value = miniList.removeFirst();
             System.out.println("removeFirst value: " + value);
             System.out.println("miniList for removeFirst: " + miniList);
         }
-
+        System.out.println("miniList end: " + miniList);
     }
 }
