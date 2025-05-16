@@ -1,7 +1,5 @@
 package com.miniTask.task03.miniList;
 
-import com.myCollections.myLinkedList.MyLinkedList;
-
 public class MiniLRUCache<K, T> {
     private Entry<K,T> head;
     private  Entry<K,T> last;
