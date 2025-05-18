@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 
-public class Task03_Book {
+public class Task03_BookTest {
 
     @Test
     public void equalsTest(){
