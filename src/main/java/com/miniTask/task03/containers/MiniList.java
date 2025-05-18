@@ -60,8 +60,10 @@ public class MiniList<T> {
         return string.toString();
     }
 
-        ///  НОДА
-    private class Node<T> {
+    ///  НОДА static так MiniList не нуждается в доступе к экземпляру Node
+    ///  Обратные ссылки на класс MiniList ну нужна,
+    ///  так как занимает лишнюю память
+    private static class Node<T> {
         private T value;
         private Node<T> next;
         private Node<T> prev;
