@@ -12,6 +12,13 @@ public class MiniLRUCache<K, T> {
         return size;
     }
 
+
+    /**
+     * Функция - добавляет элемент в конец списка Сложность O(1);
+     * (одна итерация)
+     * @param key - ключ
+     * @param value - значение
+     * */
     public void put(K key, T value) {
        if(size>=MAX_SIZE){
            //несуществующий размер (возможно стоит другой Exception поставить)
@@ -37,6 +44,14 @@ public class MiniLRUCache<K, T> {
         }
         size++;
     }
+
+
+    /**
+     * Функция - перебирает список элементов O(n);
+     * (Количество необходимых итераций растет с размером)
+     * @param key - ключ
+     * @return возвращает Entry<ключ,значение>
+     * */
     public Entry<K,T> get(K key){
         Entry<K,T> entry = head;
         while(entry != null){
@@ -48,6 +63,11 @@ public class MiniLRUCache<K, T> {
         return null;
     }
 
+    /**
+     * Функция - удаляет элемент из начала списка - Сложность O(1);
+     * (одна итерация)
+     * @return возвращает удаленный Entry<ключ,значение>
+     * */
     public Entry<K,T> remove(){
         if (this.head == null) {
             throw new IllegalArgumentException();
