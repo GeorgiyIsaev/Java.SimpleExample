@@ -1,4 +1,4 @@
-package com.miniTask.task03.miniList;
+package com.miniTask.task03.containers;
 
 public class MiniLRUCache<K, T> {
     private Entry<K,T> head;

@@ -1,6 +1,6 @@
 package com.miniTask.task03.main;
 
-import com.miniTask.task03.miniList.MiniLRUCache;
+import com.miniTask.task03.containers.MiniLRUCache;
 
 public class Task02_MiniLRUCache {
     public static void main(String[] args) {

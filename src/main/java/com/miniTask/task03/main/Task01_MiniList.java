@@ -1,6 +1,6 @@
 package com.miniTask.task03.main;
 
-import com.miniTask.task03.miniList.MiniList;
+import com.miniTask.task03.containers.MiniList;
 
 public class Task01_MiniList {
     public static void main(String[] args) {
