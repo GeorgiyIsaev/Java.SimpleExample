@@ -1,3 +1,5 @@
+package MiniTask01;
+
 import com.miniTask.task01.figure.Figure;
 import com.miniTask.task01.figure.Rectangle;
 import org.junit.jupiter.api.Assertions;

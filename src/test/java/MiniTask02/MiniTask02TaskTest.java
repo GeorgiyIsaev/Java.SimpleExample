@@ -1,3 +1,5 @@
+package MiniTask02;
+
 import com.miniTask.task02.dataTask.Task;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
